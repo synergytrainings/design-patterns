@@ -1,2 +1,1 @@
-Homework for Abstract Factory design pattern.
-============================================= 
+Design pattern homework.

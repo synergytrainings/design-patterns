@@ -5,7 +5,7 @@ package com.armen.mkrtchyan.abstractfactory.api;
  * @version 1.0
  * @since <pre>Oct 31, 2014</pre>
  */
-public interface EncodingFactor {
+public interface EncoderFactory {
 
     Decoder createDecoder();
 

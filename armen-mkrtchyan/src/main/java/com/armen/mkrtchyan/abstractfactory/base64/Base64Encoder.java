@@ -2,12 +2,7 @@ package com.armen.mkrtchyan.abstractfactory.base64;
 
 import com.armen.mkrtchyan.abstractfactory.Utils;
 import com.armen.mkrtchyan.abstractfactory.api.Encoder;
-import org.apache.commons.io.IOUtils;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.util.Base64;
+import org.apache.commons.codec.binary.Base64;
 
 /**
  * @author armen mkrtchyan.
@@ -17,6 +12,6 @@ import java.util.Base64;
 public class Base64Encoder implements Encoder {
     @Override
     public byte[] encode(Object toEncode) {
-        return Base64.getEncoder().encode(Utils.serializeObject(toEncode));
+        return Base64.encodeBase64(Utils.serializeObject(toEncode));
     }
 }

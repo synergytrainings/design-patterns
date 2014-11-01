@@ -1,13 +1,13 @@
 package com.armen.mkrtchyan.abstractfactory.hex;
 
-import com.armen.mkrtchyan.abstractfactory.api.EncodingFactor;
+import com.armen.mkrtchyan.abstractfactory.api.EncoderFactory;
 
 /**
  * @author armen mkrtchyan.
  * @version 1.0
  * @since <pre>Oct 31, 2014</pre>
  */
-public class HexEncodingFactory implements EncodingFactor {
+public class HexEncoderFactory implements EncoderFactory {
     @Override
     public HexDecoder createDecoder() {
         return new HexDecoder();

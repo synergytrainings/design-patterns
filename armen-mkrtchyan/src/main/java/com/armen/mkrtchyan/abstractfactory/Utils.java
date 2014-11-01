@@ -1,7 +1,6 @@
 package com.armen.mkrtchyan.abstractfactory;
 
 import java.io.*;
-import java.util.Base64;
 
 /**
  * @author armen mkrtchyan.

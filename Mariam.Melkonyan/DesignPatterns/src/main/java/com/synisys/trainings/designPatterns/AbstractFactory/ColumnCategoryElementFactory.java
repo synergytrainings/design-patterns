@@ -6,7 +6,7 @@ import com.synisys.trainings.designPatterns.ColumnElementInterfaces.ColumnElemen
 public class ColumnCategoryElementFactory implements ColumnElementFactory {
 
 	public ColumnElement createColumnElement(String id, String name) {
-		return new ColumnCategoryElement();
+		return new ColumnCategoryElement(id, name);
 	}
 
 }

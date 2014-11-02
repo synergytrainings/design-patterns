@@ -7,6 +7,11 @@ public class ColumnCategoryElement implements ColumnElement {
 	private String name;
 	private boolean isCategoryElement = true;
 	
+	public ColumnCategoryElement(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
 	public String getId() {
 		return this.id;
 	}

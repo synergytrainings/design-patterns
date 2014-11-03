@@ -11,13 +11,7 @@ public class Director {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		Category year = KbObjectBuilderFactory.createCategoryBuilder()
-				.id(15)
-				.name("Year")
-				.origin(Origin.SYSTEM)
-				.build();
-		
+	public static void main(String[] args) {		
 		Field yearIdField = KbObjectBuilderFactory.createNumberFieldBuilder()
 				.id(7)
 				.name("Id Field")
@@ -36,18 +30,27 @@ public class Director {
 				.mandatory(true)
 				.build();
 		
-		Category project = KbObjectBuilderFactory.createCategoryBuilder()
-				.id(10)
-				.name("Project")
-				.origin(Origin.USER_DEFINED)
+		Category year = KbObjectBuilderFactory.createCategoryBuilder()
+				.id(15)
+				.name("Year")
+				.origin(Origin.SYSTEM)
+					.addField(yearIdField)
+					.addField(yearNameField)
 				.build();
 		
 		Field yearLookupField = KbObjectBuilderFactory.createLookupFieldBuilder()
 				.id(22)
 				.name("Project lookup")
 				.description("Lookups to Project category")
-				.lookup(project)
+				.lookup(year)
 				.origin(Origin.USER_DEFINED)
+				.build();
+		
+		Category project = KbObjectBuilderFactory.createCategoryBuilder()
+				.id(10)
+				.name("Project")
+				.origin(Origin.USER_DEFINED)
+					.addField(yearLookupField)
 				.build();
 	}
 

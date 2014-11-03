@@ -1,6 +1,16 @@
+import Builders.PCBuilder;
+import Builders.SmartDeviceBuilder;
+import Device.SmartDevice;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        SmartDeviceBuilder builder = new PCBuilder();
+
+        Director director = new Director();
+        director.setDeviceBuilder(builder);
+        director.constructSmartDevice();
+
+        SmartDevice device = director.getSmartDevice();
     }
 }

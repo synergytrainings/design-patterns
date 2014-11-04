@@ -21,6 +21,10 @@ public class Address implements Copyable<Address> {
 	
 	//Copy constructor implementation
 	public Address(Address address){
+		if(address == null){
+			throw new IllegalArgumentException("Provided address can't be null");
+		}
+		
 		this.city = address.city;
 		this.street = address.street;
 		this.building = address.building;

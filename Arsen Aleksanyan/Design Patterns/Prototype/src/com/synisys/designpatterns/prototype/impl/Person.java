@@ -24,21 +24,33 @@ public class Person implements Copyable<Person> {
 		this.age = age;
 		this.gender = gender;
 		this.address = address;
-		this.emails = Arrays.copyOf(emails, emails.length);
-		this.phoneNumbers = new ArrayList<>(phoneNumbers);
+		if(emails != null){
+			this.emails = Arrays.copyOf(emails, emails.length);
+		}
+		if(phoneNumbers != null){
+			this.phoneNumbers = new ArrayList<>(phoneNumbers);
+		}
 	}
 	
 	//Copy constructor implementation
 	public Person(Person person){
+		if(person == null){
+			throw new IllegalArgumentException("Provided person can't be null");
+		}
+		
 		this.name = person.name;
 		this.age = person.age;
 		this.gender = person.gender;
 		this.address = new Address(person.address);
-		this.emails = person.emails.clone();
-		this.phoneNumbers = new ArrayList<PhoneNumber>();
-		
-		for(PhoneNumber phoneNumber : person.phoneNumbers){
-			this.phoneNumbers.add(new PhoneNumber(phoneNumber));
+		if(person.emails != null){
+			this.emails = person.emails.clone();
+		}
+		if(person.phoneNumbers != null){
+			this.phoneNumbers = new ArrayList<PhoneNumber>();
+			
+			for(PhoneNumber phoneNumber : person.phoneNumbers){
+				this.phoneNumbers.add(new PhoneNumber(phoneNumber));
+			}
 		}
 	}
 	
@@ -53,11 +65,15 @@ public class Person implements Copyable<Person> {
 		
 		//copying objects
 		person.address = this.address.copy();
-		person.emails = this.emails.clone();
-		person.phoneNumbers = new ArrayList<PhoneNumber>();
+		if(this.emails != null){
+			person.emails = this.emails.clone();
+		}
+		if(this.phoneNumbers != null){
+			person.phoneNumbers = new ArrayList<PhoneNumber>();
 		
-		for(PhoneNumber phoneNumber : this.phoneNumbers){
-			person.phoneNumbers.add(phoneNumber.copy());
+			for(PhoneNumber phoneNumber : this.phoneNumbers){
+				person.phoneNumbers.add(phoneNumber.copy());
+			}
 		}
 		
 		return person;

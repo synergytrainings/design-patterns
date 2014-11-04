@@ -19,6 +19,10 @@ public class PhoneNumber implements Copyable<PhoneNumber> {
 	
 	//Copy Constructor
 	public PhoneNumber(PhoneNumber phoneNumber){
+		if(phoneNumber == null){
+			throw new IllegalArgumentException("Provided phone number can't be null");
+		}
+		
 		this.areaCode = phoneNumber.areaCode;
 		this.number = phoneNumber.number;
 		this.isMobile = phoneNumber.isMobile;

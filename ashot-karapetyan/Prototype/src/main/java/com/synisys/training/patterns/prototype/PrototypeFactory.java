@@ -14,7 +14,7 @@ public  class  PrototypeFactory {
 	}
 
 
-	public  static Shape getInstance(Class<?> clazz)  {
+	public  static Shape createInstance(Class<?> clazz)  {
 		if(!prototypes.containsKey(clazz)){
 			throw new IllegalArgumentException(String.format("Unknown type of shape: %s", clazz));
 		}

@@ -10,6 +10,10 @@ import org.apache.commons.codec.binary.Hex;
  * @since <pre>Oct 31, 2014</pre>
  */
 public class HexEncoder implements Encoder {
+
+    HexEncoder() {
+    }
+
     @Override
     public byte[] encode(Object toEncode) {
         return Hex.encodeHexString(Utils.serializeObject(toEncode)).getBytes();

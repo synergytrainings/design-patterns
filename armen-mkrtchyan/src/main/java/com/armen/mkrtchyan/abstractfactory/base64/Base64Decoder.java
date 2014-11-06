@@ -16,6 +16,10 @@ import java.io.InputStream;
  * @since <pre>Oct 31, 2014</pre>
  */
 public class Base64Decoder implements Decoder {
+
+    Base64Decoder() {
+    }
+
     @Override
     public Object decode(InputStream stream) throws DecoderException{
         byte[] encoded;

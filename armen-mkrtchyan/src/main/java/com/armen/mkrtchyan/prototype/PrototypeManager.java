@@ -28,7 +28,7 @@ public class PrototypeManager {
         registry.put("body", defaultBody);
     }
 
-    public static <T extends HtmlElement> T getElement(String name) throws CloneNotSupportedException {
+    public static <T extends HtmlElement> T get(String name) throws CloneNotSupportedException {
             return (T) registry.get(name).clone();
     }
 

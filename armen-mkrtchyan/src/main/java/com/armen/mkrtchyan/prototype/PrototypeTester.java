@@ -8,10 +8,10 @@ package com.armen.mkrtchyan.prototype;
 public class PrototypeTester {
 
     public static void main(String[] args) throws CloneNotSupportedException {
-        System.out.println(PrototypeManager.getElement("body").getHtml());
+        System.out.println(PrototypeManager.get("body").getHtml());
         PrototypeManager.edit("div").getChildElements().clear();
         System.out.println("--------------------");
-        System.out.println(PrototypeManager.getElement("body").getHtml());
+        System.out.println(PrototypeManager.get("body").getHtml());
     }
 
 }

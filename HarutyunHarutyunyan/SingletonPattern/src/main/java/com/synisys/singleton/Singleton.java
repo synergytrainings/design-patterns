@@ -28,4 +28,11 @@ public class Singleton implements Serializable {
 	private Object readResolve() {
 		return getInstance();
 	}
+	
+	/**
+	 * Preventing cloning
+	 * */
+	public Object clone() throws CloneNotSupportedException {
+	    throw new CloneNotSupportedException(); 
+	}
 }

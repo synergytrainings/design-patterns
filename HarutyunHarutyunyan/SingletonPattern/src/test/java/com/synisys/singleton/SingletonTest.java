@@ -15,7 +15,7 @@ public class SingletonTest {
 
 	@Test
 	public void testGetInstance() throws Exception{
-		Assert.assertTrue("Is the two instances the same", Singleton.getInstance().hashCode() == Singleton.getInstance().hashCode());
+		Assert.assertTrue("Is the two instances the same", Singleton.getInstance() == Singleton.getInstance());
 	}
 	
 	@Test

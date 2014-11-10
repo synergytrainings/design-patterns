@@ -22,7 +22,7 @@ public class Singleton implements Serializable {
 	 * In case when we need store it's state in file system and retrieve it at
 	 * later point of time: 
 	 * 	1. We need to implement Serializable interface 
-	 * 	2. We need to do it provide the implementation of readResolve() method.
+	 * 	2. We need to provide the implementation of readResolve() method.
 	 * */
 
 	private Object readResolve() {

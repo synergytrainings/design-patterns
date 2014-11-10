@@ -5,5 +5,13 @@ package com.synisys.design_patterns.domain;
  */
 public class InjectorMotor extends Motor {
 
-    private Object injectorSpecificVariables;
+    {
+        this.type = "Injector";
+    }
+
+    @Override
+    public void run(){
+        System.out.println("Injector motor run!");
+    }
+
 }

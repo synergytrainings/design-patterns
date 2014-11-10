@@ -5,5 +5,12 @@ package com.synisys.design_patterns.domain;
  */
 public class CommonMotor extends Motor{
 
-    private Object commonMotorVariables;
+    {
+        this.type = "Common";
+    }
+
+    @Override
+    public void run(){
+        System.out.println("Common motor run!");
+    }
 }

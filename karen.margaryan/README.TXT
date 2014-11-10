@@ -4,3 +4,5 @@ Creational Patterns:
   - Abstract Factory Pattern
   - Builder Pattern
   - Prototype Pattern
+  - Factory method
+  - Singleton Pattern

@@ -13,7 +13,7 @@ import java.util.Arrays;
  * @version 1.0
  * @since <pre>Oct 31, 2014</pre>
  */
-public class Tester {
+public class AbstractFactoryTester {
 
     public static void main(String[] args) throws IOException, DecoderException {
         TestClass testObject = new TestClass(

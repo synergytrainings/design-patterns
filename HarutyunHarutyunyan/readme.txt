@@ -6,3 +6,6 @@ Projects for Patterns.
 			3. Factory Pattern : FactoryPattern
 			4. Prototype Pattern : PrototypePattern
 			5. Singleton Pattern : SingletonPattern
+	
+	Structural Patterns:
+			1. Adapter Pattern : AdapterPattern

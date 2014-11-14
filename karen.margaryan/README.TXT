@@ -6,3 +6,4 @@ Creational Patterns:
   - Prototype Pattern
   - Factory method
   - Singleton Pattern
+  - Adapter Pattern

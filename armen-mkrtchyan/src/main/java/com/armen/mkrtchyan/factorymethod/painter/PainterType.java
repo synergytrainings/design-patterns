@@ -11,7 +11,7 @@ public enum PainterType implements PainterFactory{
         public DatePainter createPainter() {
             return new DatePainter();
         }
-    }, NUMBER {
+    }, INTEGER {
         @Override
         public NumberPainter createPainter() {
             return new NumberPainter();

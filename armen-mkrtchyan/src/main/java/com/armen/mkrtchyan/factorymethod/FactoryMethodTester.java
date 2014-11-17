@@ -13,7 +13,7 @@ public class FactoryMethodTester {
 
     public static void main(String[] args) {
         System.out.println(PainterType.findType("date").createPainter().paint(new Date()));
-        System.out.println(PainterType.findType("number").createPainter().paint(17845641));
+        System.out.println(PainterType.findType("integer").createPainter().paint(17845641));
     }
 
 }

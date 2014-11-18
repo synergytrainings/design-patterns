@@ -7,3 +7,4 @@ Creational Patterns:
   - Factory method
   - Singleton Pattern
   - Adapter Pattern
+  - Bridge Pattern

@@ -13,13 +13,13 @@ import com.synisys.composite.Times;
 public class CostomisePatternTest {
 
 	@Test
-	public void testGetInstance() throws Exception {
+	public void testExpression() throws Exception {
 		// Expresion (((25.0 + 2.0) - (3.0 * 4.0)) / 6.0)
 		Expression exp = new Div(new Minus(new Plus(new Number(25.0),
 				new Number(2.0)), new Times(new Number(3.0), new Number(4.0))),
 				new Number(6.0));
 		
-		Assert.assertTrue("Is the two instances the same", exp.evaluate()
+		Assert.assertTrue("Is equals", exp.evaluate()
 				.equals(2.5));
 	}
 }

@@ -10,3 +10,4 @@ Projects for Patterns.
 	Structural Patterns:
 			1. Adapter Pattern : AdapterPattern
 			2. Bridge Pattern : BridgePattern
+			3. Composite Pattern : CompositePattern

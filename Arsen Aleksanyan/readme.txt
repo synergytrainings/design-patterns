@@ -4,3 +4,4 @@
 4. Implementation of Factory pattern
 5. Implementation of Adapter pattern. Adapting KB categories to be used by DE.
 6. Implementation of Bridge pattern on loggers.
+7. Composite pattern implementation on UI Components

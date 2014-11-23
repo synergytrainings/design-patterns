@@ -5,3 +5,4 @@
 5. Implementation of Adapter pattern. Adapting KB categories to be used by DE.
 6. Implementation of Bridge pattern on loggers.
 7. Composite pattern implementation on UI Components
+8. Calculating borsh calories using decorator pattern :D

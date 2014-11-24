@@ -11,13 +11,14 @@ import java.util.List;
 public class Directory implements FileSystemItem {
 
 	private List<FileSystemItem> children = new ArrayList<>();
+	private final FileSystemItemFactory fileSystemItemFactory = new FileSystemItemFactory();
 	private final Path path;
 
 	protected Directory(String path) {
 		this.path = Paths.get(path);
 		String[] childFiles = new java.io.File(this.path.toString()).list();
 		for (String childFile : childFiles) {
-			children.add(FileSystemItemFactory.getFileSystemItem(Paths.get(path, childFile).toAbsolutePath().toString()));
+			children.add(getFileSystemItemFactory().getFileSystemItem(Paths.get(path, childFile).toAbsolutePath().toString()));
 		}
 	}
 
@@ -48,6 +49,11 @@ public class Directory implements FileSystemItem {
 		}
 		Files.delete(this.path);
 
+	}
+
+
+	private FileSystemItemFactory getFileSystemItemFactory() {
+		return this.fileSystemItemFactory;
 	}
 
 }

@@ -9,11 +9,11 @@ import java.nio.file.Paths;
  */
 public class FileSystemItemFactory {
 
-	public static FileSystemItem getFileSystemItem(String itemPath){
+	public FileSystemItem getFileSystemItem(String itemPath){
 		return getFileSystemItem(Paths.get(itemPath));
 	}
 
-	public static FileSystemItem getFileSystemItem(Path itemPath){
+	public FileSystemItem getFileSystemItem(Path itemPath){
 		String absolutePAth = itemPath.toAbsolutePath().toString();
 		if(Files.isDirectory(itemPath)){
 			return new Directory(absolutePAth);

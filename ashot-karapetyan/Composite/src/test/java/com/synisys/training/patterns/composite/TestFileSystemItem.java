@@ -1,7 +1,5 @@
 package com.synisys.training.patterns.composite;
 
-import com.synisys.training.patterns.composite.FileSystemItem;
-import com.synisys.training.patterns.composite.FileSystemItemFactory;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -23,12 +21,15 @@ public class TestFileSystemItem {
 	private Path tmp_directory_1_3;
 	private Path tmp_file_1_2_test;
 
+	private FileSystemItemFactory itemFactory;
+
 	/**
 	 * Creates temporary folders and files for testing.
 	 */
 	@Before
 	public void setUp() throws IOException {
 
+		this.itemFactory = new FileSystemItemFactory();
 		Path tempPath = Paths.get(System.getProperty("java.io.tmpdir"));
 
 		tmp_directory_1 = Paths.get(tempPath.toString(), "1");
@@ -53,7 +54,7 @@ public class TestFileSystemItem {
 
 	@Test
 	public void testDeleteDirectory() throws IOException {
-		FileSystemItem item = FileSystemItemFactory.getFileSystemItem(tmp_directory_1);
+		FileSystemItem item = this.itemFactory.getFileSystemItem(tmp_directory_1);
 
 		item.delete();
 
@@ -63,7 +64,7 @@ public class TestFileSystemItem {
 
 	@Test
 	public void testDeleteFile() throws IOException {
-		FileSystemItem item = FileSystemItemFactory.getFileSystemItem(tmp_file_1_2_test);
+		FileSystemItem item = this.itemFactory.getFileSystemItem(tmp_file_1_2_test);
 
 		item.delete();
 
@@ -74,7 +75,7 @@ public class TestFileSystemItem {
 
 	@Test
 	public void testDirectoryMove() throws IOException {
-		FileSystemItem item = FileSystemItemFactory.getFileSystemItem(tmp_directory_1);
+		FileSystemItem item = this.itemFactory.getFileSystemItem(tmp_directory_1);
 		Path newDirectory = tmp_directory_1.resolveSibling("1_copy");
 
 		item.moveTo(newDirectory.toString());
@@ -91,7 +92,7 @@ public class TestFileSystemItem {
 
 	@Test
 	public void testFileMove() throws IOException {
-		FileSystemItem item = FileSystemItemFactory.getFileSystemItem(tmp_file_1_2_test);
+		FileSystemItem item = this.itemFactory.getFileSystemItem(tmp_file_1_2_test);
 		Path newPlace = tmp_directory_1_3;
 		Path newFilePath = Paths.get(newPlace.toString(), tmp_file_1_2_test.getFileName().toString());
 
@@ -104,11 +105,10 @@ public class TestFileSystemItem {
 
 
 	private void deleteTempFiles() throws IOException {
-		if(Files.exists(tmp_directory_1)){
+		if (Files.exists(tmp_directory_1)) {
 			FileUtils.forceDelete(tmp_directory_1.toFile());
 		}
 	}
-
 
 
 }

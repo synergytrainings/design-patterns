@@ -8,3 +8,4 @@ Creational Patterns:
   - Singleton Pattern
   - Adapter Pattern
   - Bridge Pattern
+  - Composite Pattern

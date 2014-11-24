@@ -8,8 +8,8 @@ public class LocalShippingOrderDecorator extends OrderDecorator {
 	}
 
 	@Override
-	public int GetTotalAmount() {
-		return order.GetTotalAmount() + LOCAL_SHIPPING_CHARGES;
+	public int getTotalAmount() {
+		return order.getTotalAmount() + LOCAL_SHIPPING_CHARGES;
 	}
 
 }

@@ -9,8 +9,8 @@ public class InternationalShippingOrderDecorator extends OrderDecorator {
 	}
 
 	@Override
-	public int GetTotalAmount() {
-		return order.GetTotalAmount() + INTERNATIONAL_SHIPPING_CHARGES;
+	public int getTotalAmount() {
+		return order.getTotalAmount() + INTERNATIONAL_SHIPPING_CHARGES;
 	}
 
 }

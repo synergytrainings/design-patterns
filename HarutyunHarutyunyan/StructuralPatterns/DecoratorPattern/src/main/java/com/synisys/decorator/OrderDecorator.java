@@ -7,5 +7,5 @@ public abstract class OrderDecorator implements Order {
 		this.order = order;
 	}
 
-	public abstract int GetTotalAmount();
+	public abstract int getTotalAmount();
 }

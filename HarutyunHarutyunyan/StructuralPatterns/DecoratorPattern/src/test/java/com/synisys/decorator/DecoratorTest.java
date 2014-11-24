@@ -16,7 +16,7 @@ public class DecoratorTest {
 				newYorkToWashingtonOrder);
 
 		Assert.assertTrue("Is the Order Total Amount is 160",
-				washingtonToYerevanOrder.GetTotalAmount() == 160);
+				washingtonToYerevanOrder.getTotalAmount() == 160);
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ public class DecoratorTest {
 		Order newYorkToWashingtonOrder = new LocalShippingOrderDecorator(order);
 
 		Assert.assertTrue("Is the Order Total Amount is 110",
-				newYorkToWashingtonOrder.GetTotalAmount() == 110);
+				newYorkToWashingtonOrder.getTotalAmount() == 110);
 	}
 	
 	@Test
@@ -37,7 +37,7 @@ public class DecoratorTest {
 				order);
 
 		Assert.assertTrue("Is the Order Total Amount is 150",
-				washingtonToYerevanOrder.GetTotalAmount() == 150);
+				washingtonToYerevanOrder.getTotalAmount() == 150);
 	}
 
 }

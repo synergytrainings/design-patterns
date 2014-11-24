@@ -1,7 +1,7 @@
 package com.synisys.composite;
 
 public class Minus implements Expression {
-	Expression lt, rt;
+	private Expression lt, rt;
 
 	public Minus(Expression l, Expression r) {
 		lt = l;

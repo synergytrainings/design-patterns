@@ -1,7 +1,7 @@
 package com.synisys.composite;
 
 public class Times implements Expression {
-	Expression lt, rt;
+	private Expression lt, rt;
 
 	public Times(Expression l, Expression r) {
 		lt = l;

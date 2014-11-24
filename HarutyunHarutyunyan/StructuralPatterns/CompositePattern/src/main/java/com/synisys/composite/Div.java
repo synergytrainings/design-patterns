@@ -1,7 +1,7 @@
 package com.synisys.composite;
 
 public class Div implements Expression {
-	Expression lt, rt;
+	private Expression lt, rt;
 
 	public Div(Expression l, Expression r) {
 		lt = l;

@@ -3,7 +3,7 @@ package com.synisys.composite;
 import java.util.List;
 
 public class Plus implements Expression {
-	Expression lt, rt;
+	private Expression lt, rt;
 	public Plus(Expression l, Expression r) {
 		lt = l;
 		rt = r;

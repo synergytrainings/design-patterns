@@ -9,3 +9,4 @@ Creational Patterns:
   - Adapter Pattern
   - Bridge Pattern
   - Composite Pattern
+  - Facade Pattern

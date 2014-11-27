@@ -4,31 +4,31 @@ import java.sql.Connection;
 
 public class FacadeImporter {
 
-	public static void importFile(DBTypes dbType, ReportTypes reportType,
+	public static void importFile(DBTypes dbType, FileTypes fileType,
 			String filePath) {
 		Connection con = null;
 		switch (dbType) {
 		case MYSQL:
 			con = MySqlImporter.getMySqlDBConnection();
-			MySqlImporter mySqlHelper = new MySqlImporter();
-			switch (reportType) {
+			MySqlImporter mySqlImporter = new MySqlImporter();
+			switch (fileType) {
 			case XML:
-				mySqlHelper.importXMLtoMySqlDB(filePath, con);
+				mySqlImporter.importXMLtoMySqlDB(filePath, con);
 				break;
 			case EXCEL:
-				mySqlHelper.importExceltoMySqlDB(filePath, con);
+				mySqlImporter.importExceltoMySqlDB(filePath, con);
 				break;
 			}
 			break;
 		case ORACLE:
 			con = OracleImporter.getOracleDBConnection();
-			OracleImporter oracleHelper = new OracleImporter();
-			switch (reportType) {
+			OracleImporter oracleImporter = new OracleImporter();
+			switch (fileType) {
 			case XML:
-				oracleHelper.importXMLtoOracleDB(filePath, con);
+				oracleImporter.importXMLtoOracleDB(filePath, con);
 				break;
 			case EXCEL:
-				oracleHelper.importExceltoOracleDB(filePath, con);
+				oracleImporter.importExceltoOracleDB(filePath, con);
 				break;
 			}
 			break;
@@ -40,7 +40,7 @@ public class FacadeImporter {
 		MYSQL, ORACLE;
 	}
 
-	public static enum ReportTypes {
+	public static enum FileTypes {
 		XML, EXCEL;
 	}
 }

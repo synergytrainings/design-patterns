@@ -11,6 +11,8 @@ Projects for Patterns.
 			1. Adapter Pattern : AdapterPattern
 			2. Bridge Pattern : BridgePattern
 			3. Composite Pattern : CompositePattern
-			4. Decorator Pattern : DecoratorPattern
 			5. Facade Pattern : FacadePattern
+			4. Decorator Pattern : DecoratorPattern
+			5. ProxyPattern : ProxyPattern
+			6. Flyweight : Flyweight
 			

@@ -10,3 +10,4 @@ Creational Patterns:
   - Bridge Pattern
   - Composite Pattern
   - Facade Pattern
+  - Flyweight Pattern

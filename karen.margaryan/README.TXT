@@ -6,8 +6,13 @@ Creational Patterns:
   - Prototype Pattern
   - Factory method
   - Singleton Pattern
+
+Structural Patterns:
   - Adapter Pattern
   - Bridge Pattern
   - Composite Pattern
   - Facade Pattern
   - Flyweight Pattern
+  - Proxy Pattern
+
+  

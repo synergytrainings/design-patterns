@@ -15,4 +15,5 @@ Structural Patterns:
   - Flyweight Pattern
   - Proxy Pattern
 
-  
+Behavioral Patterns:
+  - Chain Of Responsibility Pattern

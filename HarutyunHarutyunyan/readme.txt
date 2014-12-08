@@ -15,4 +15,6 @@ Projects for Patterns.
 			4. Decorator Pattern : DecoratorPattern
 			5. ProxyPattern : ProxyPattern
 			6. Flyweight : Flyweight
-			
+
+	Behavioral Patterns: 
+			1. ChainOfResponsibility Pattern : ChainOfResponsibility

@@ -1,1 +1,1 @@
-This is my folder :-)
+Homeworks for Design Patterns training

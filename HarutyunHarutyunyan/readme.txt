@@ -18,3 +18,4 @@ Projects for Patterns.
 
 	Behavioral Patterns: 
 			1. ChainOfResponsibility Pattern : ChainOfResponsibility
+			2. Command Pattern : CommandPattern

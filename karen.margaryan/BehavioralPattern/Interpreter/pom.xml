@@ -6,7 +6,11 @@
 
     <groupId>Interpreter</groupId>
     <artifactId>Interpreter</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../Iterator</module>
+    </modules>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

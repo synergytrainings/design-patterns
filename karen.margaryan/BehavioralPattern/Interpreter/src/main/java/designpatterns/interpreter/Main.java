@@ -24,7 +24,7 @@ public class Main {
 
         ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
         ScriptEngine engine = scriptEngineManager.getEngineByName("JavaScript");
-        System.out.println(engine.eval(translatedExpression));
+        System.out.println(context.getExpression() + " = " + engine.eval(translatedExpression));
     }
 
 }

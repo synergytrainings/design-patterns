@@ -3,9 +3,8 @@ package impl;
 import api.Tree;
 import api.TreeIterator;
 import api.TreeNode;
-
-import java.util.LinkedList;
-import java.util.Queue;
+import impl.iterator.LeafIterator;
+import impl.iterator.LevelIterator;
 
 public class TreeImpl implements Tree<TreeNode>{
 
@@ -22,28 +21,12 @@ public class TreeImpl implements Tree<TreeNode>{
 
     @Override
     public TreeIterator<TreeNode> getIterator() {
-        return new TreeLevelIterator(this.root);
+        return new LevelIterator(this.root);
     }
 
+	@Override
+	public TreeIterator<TreeNode> getLeafIterator(){
+		return new LeafIterator(this.root);
+	}
 
-    private class TreeLevelIterator implements TreeIterator<TreeNode> {
-
-        Queue<TreeNode> queue = new LinkedList<>();
-
-        TreeLevelIterator(TreeNode root) {
-            queue.add(root);
-        }
-
-        @Override
-        public boolean hasNext() {
-            return queue.isEmpty();
-        }
-
-        @Override
-        public TreeNode next() {
-            TreeNode node = queue.remove();
-            queue.addAll(node.getChildren());
-            return node;
-        }
-    }
 }

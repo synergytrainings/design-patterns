@@ -6,4 +6,6 @@ public interface Tree<E> {
 
     TreeIterator<E> getIterator();
 
+	TreeIterator<E> getLeafIterator();
+
 }

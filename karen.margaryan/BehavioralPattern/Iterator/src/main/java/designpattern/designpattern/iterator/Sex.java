@@ -6,5 +6,5 @@ package designpattern.designpattern.iterator;
 public enum Sex {
     MALE,
     FEMALE,
-    ALL
+    BOTH
 }

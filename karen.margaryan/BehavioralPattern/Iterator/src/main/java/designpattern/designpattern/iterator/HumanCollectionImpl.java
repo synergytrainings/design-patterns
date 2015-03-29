@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Karen on 3/13/2015.
  */
-public class HumanCollectionImpl implements IHumanCollection {
+public class HumanCollectionImpl implements HumanCollection {
 
     private List<Human> humansList;
 
@@ -27,27 +27,25 @@ public class HumanCollectionImpl implements IHumanCollection {
     }
 
     @Override
-    public IHumanIterator iterator(Sex sex) {
-        return new HumanIteratorImpl(sex, humansList);
+    public HumanIterator iterator(Sex sex) {
+        return new HumanIteratorImpl(sex);
     }
 
 
-    private class HumanIteratorImpl implements IHumanIterator {
+    private class HumanIteratorImpl implements HumanIterator {
 
         private Sex sex;
-        private List<Human> humansList;
         private int currentPosition;
 
-        public HumanIteratorImpl(Sex sex, List<Human> humansList) {
+        public HumanIteratorImpl(Sex sex) {
             this.sex = sex;
-            this.humansList = humansList;
         }
 
         @Override
         public boolean hasNext() {
             while (currentPosition < humansList.size()) {
                 Human human = humansList.get(currentPosition);
-                if (human.getSex() == Sex.ALL || human.getSex() == sex) {
+                if (human.getSex() == Sex.BOTH || human.getSex() == sex) {
                     return true;
                 }
                 ++currentPosition;

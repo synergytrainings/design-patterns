@@ -20,3 +20,4 @@ Behavioral Patterns:
   - Command Pattern
   - Interpreter Pattern
   - Iterator Pattern
+  - Visitor Pattern

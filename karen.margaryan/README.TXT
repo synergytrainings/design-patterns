@@ -21,3 +21,4 @@ Behavioral Patterns:
   - Interpreter Pattern
   - Iterator Pattern
   - Visitor Pattern
+  - Mediator Pattern

@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+                xmlns:sis="http://synisys.com"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <!--  ................................. other code ...................................... -->
+
+    <!-- Case Subject -->
+    <h:panelGrid columns="3" width="100%" border="0" cellpadding="0" cellspacing="0" styleClass="caption" columnClasses="w20, x, w_14">
+        <h:panelGroup styleClass="caption3 float-left">
+            <h:outputText value="Case Subject"/>
+        </h:panelGroup>
+    </h:panelGrid>
+    <h:panelGrid columns="1" cellpadding="0" cellspacing="0" width="100%">
+        <h:panelGrid columns="2" cellpadding="0" cellspacing="0" columnClasses="header1 w25p, header1 w25p" styleClass="collapse w50p">
+            <h:outputText value="Registry" />
+            <h:outputText value="Subject" />
+        </h:panelGrid>
+        <h:panelGrid id="case_subjects_container" columns="2" cellpadding="0" cellspacing="0" columnClasses="data_cell w25p, data_cell w25p" styleClass="collapse w50p" rendered="#{formFactory.form.isNew}">
+            <h:panelGroup>
+                <sis:comboboxEx value="#{caseForm.deItem.caeRegistryId}" id="caseRegistryTypeId" >
+                    <f:selectItems value="#{cl.caseRegistryTypes}" />
+                    <a4j:support event="onchange" action="#{caseForm.onCaseRegistryChange}" reRender="caseSubjectId,newPartyRole" />
+                </sis:comboboxEx>
+            </h:panelGroup>
+            <sis:comboboxEx value="#{caseForm.deItem.caseSubjectId}" id="caseSubjectId">
+                <f:selectItems value="#{cl.caseSubjects}" />
+                <a4j:support event="onchange" action="#{caseForm.onCaseSubjectChange}"/>
+            </sis:comboboxEx>
+        </h:panelGrid>
+    </h:panelGrid>
+    <!--/ Case Subject -->
+
+    <!-- Adding new Case Party -->
+    <h:panelGrid columns="3" width="100%" border="0" cellpadding="0" cellspacing="0" styleClass="caption" columnClasses="w20, x, w_14">
+        <h:panelGroup styleClass="caption3 float-left">
+            <h:outputText value="Add new Party"/>
+        </h:panelGroup>
+    </h:panelGrid>
+    <sis:comboboxEx value="#{caseForm.newCasePartyRoleId}" id="newPartyRole">
+        <f:selectItems value="#{cl.partyTypeItems}" />
+        <a4j:support event="onchange" action="#{caseForm.newPartyRoleChanged}"/>
+    </sis:comboboxEx>
+
+    <!-- .....etc.... -->
+
+    <!-- /Adding new Case Party -->
+
+
+
+    <!--  .................................... other code ................................... -->
+
+
+</ui:composition>

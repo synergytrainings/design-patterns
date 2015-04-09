@@ -7,10 +7,12 @@ public class LockContext {
 		currentState = new UnlockState();
 	}
 
+	// I think it is unnecessary 
 	public void setState(State state) {
 		this.currentState = state;
 	}
 
+	// I think it is unnecessary 
 	public State getState() {
 		return currentState;
 	}
